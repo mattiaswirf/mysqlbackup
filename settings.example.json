@@ -1,0 +1,16 @@
+{
+    "mysql": {
+        "bin": "/usr/bin/mysql",
+        "account_file": "/home/mysql/mysqlbackup/account.cnf"
+    },
+    "mysqldump": {
+        "bin": "/usr/bin/mysqldump"
+    },
+    "backup_path": "/var/backups/mysql",
+    "exclude": [
+        "mysql", "performance_schema", "Database", "information_schema", ""
+    ],
+    "log": {
+        "file": "/home/mysql/mysqlbackup/mysqlbackup.log"
+    }
+}
