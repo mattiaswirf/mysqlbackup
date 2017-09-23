@@ -23,6 +23,7 @@ class MySQLDailyBackup(object):
         Initiate this class, set some values,
         and get it's settings from file.
         """
+        self.current_cwd = "/srv/tools/mysqlbackup/"
         self.settings = self.get_settings()
         logging.basicConfig(filename=self.settings['log']['file'], level=logging.DEBUG)
         self.today = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -34,7 +35,7 @@ class MySQLDailyBackup(object):
         Get settings from Json file if there
         is one present.
         """
-        settings_file_path = os.path.join(os.getcwd(), 'settings.json')
+        settings_file_path = os.path.join(self.current_cwd, 'settings.json')
         settings_file = open(settings_file_path)
         return json.load(settings_file)
 
